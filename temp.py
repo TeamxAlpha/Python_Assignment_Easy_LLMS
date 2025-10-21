@@ -19,8 +19,6 @@ def temperature_converter(temperature: float, unit: str) -> str:
     except (TypeError, ValueError):
         return "Error: Invalid input. Please provide a number for temp."
 
-
-
 print(temperature_converter(25, "Celsius")) 
 print(temperature_converter(77, "Fahrenheit"))  
 

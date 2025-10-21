@@ -20,4 +20,5 @@ def calculator(x: int, y: int, operator: str ) -> str:
 
 print(calculator(5 , 3, "+"))
 print(calculator(5 , 3, "-"))
-
+print(calculator(5 , 3, "*"))
+print(calculator(5 , 5, "/"))

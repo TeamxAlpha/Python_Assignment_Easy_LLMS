@@ -11,7 +11,7 @@ def reverse_list(my_list: list[object]) -> list[object]:
     return reverse_list
 
 numbers = [1, 5, 3, 8, 2]
-my_list = ['a', 2, 'b', 'c']
+my_list = ['a', 2, 'b', 8, 'z', 'c']
 
 total, avg, max_val = list_operations(numbers)
 print("Sum:", total)
