@@ -1,12 +1,26 @@
-def temperature_converter(temperature, unit):
-    if unit.lower() == "celsius":
-        fahrenheit = (temperature * 9/5) + 32
-        return f"{fahrenheit} Fahrenheit"
-    elif unit.lower() == "fahrenheit":
-        celsius = (temperature - 32) * 5/9
-        return f"{celsius} Celsius"
-    else:
-        return "Error: Unsupported unit."
+def temperature_converter(temperature: float, unit: str) -> str:
 
-# Example
-print(temperature_converter(25, "Celsius"))  # Output: 77.0 Fahrenheit
+    try:
+        unit_lower = unit.lower()
+        
+        match unit_lower:
+            case "celsius":
+                result = (temperature * 9 / 5) + 32
+                result = round(result, 2)
+                return f"{result} Fahrenheit"
+            case "fahrenheit":
+                result = (temperature - 32) * 5 / 9
+                result = round(result, 2)
+                return f"{result} Celsius"
+            
+            case _:
+                return "Error: Unsupported unit. Use 'Celsius' or 'Fahrenheit'."
+    
+    except (TypeError, ValueError):
+        return "Error: Invalid input. Please provide a number for temperature."
+
+
+
+print(temperature_converter(25, "Celsius")) 
+print(temperature_converter(77, "Fahrenheit"))  
+

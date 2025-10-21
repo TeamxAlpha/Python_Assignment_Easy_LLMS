@@ -1,23 +1,23 @@
-def calculator():
-    x = float(input("Enter Firist Number:"))
-    y = float(input("Enter Second Number: "))
-    op = input("Enterr Operator (+, -, *, /): ")
-
-    if op == '+':
-        print(f"{x} + {y} = {x + y}")
-    elif op == '-':
-        print(f"{x} - {y} = {x - y}")
-    elif op == '*':
-        print(f"{x} * {y} = {x * y}")
-    elif op == '/':
-        if y == 0:
-            print("Error: Division by zero is not allowed.")
-        else:
-            print(f"{x} / {y} = {x / y}")
+def calculator(x: int, y: int, operator: str ) -> str:
+    try: 
+        match operator:
+            case '+':
+                result = x + y
+            case '-':
+                result = x - y
+            case '*':
+                result = x * y
+            case '/': 
+                result = x / y
+            case _:
+                return "Error: Unsupported operator. "
+            
+        return f"{x} {operator} {y} = {result}"
     
-    else:
-        print("Error: Unsupported operator.")   
+    except ZeroDivisionError:
+        return "Error: Division by zero is not allowed. "
 
-if __name__ == "__main__":
-    calculator()
+
+print(calculator(5 , 3, "+"))
+print(calculator(5 , 3, "-"))
 

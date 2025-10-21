@@ -1,7 +1,8 @@
-def vowel_counter(string):
-    vowels = "aeiouAEIOU"
+def vowel_counter(string: str) ->int:
+    vowels = "aeiou"
+    string = string.lower()
     count = sum(1 for char in string if char in vowels)
     return count
 
-# Example
-print(vowel_counter("Hello, world!"))  # Output: 3
+
+print(vowel_counter("Hello, world!"))
