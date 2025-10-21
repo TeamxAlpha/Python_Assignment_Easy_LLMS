@@ -10,7 +10,6 @@ def reverse_list(my_list: list[object]) -> list[object]:
         reverse_list.append(my_list[i])
     return reverse_list
 
-# Examples
 numbers = [1, 5, 3, 8, 2]
 my_list = ['a', 2, 'b', 'c']
 
